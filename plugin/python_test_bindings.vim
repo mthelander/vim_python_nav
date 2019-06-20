@@ -7,6 +7,7 @@ if exists('g:loaded_python_vim_test_bindings')
 endif
 
 let g:project_dir = 'linear' " Override this for a different project name
+let g:pytest_args = '-ra'
 
 function OpenTest()
   execute ':e ' . GetTestFile()
@@ -58,7 +59,7 @@ endfunction
 
 function _RunTest(filename)
   let root = RootDir()
-  let command = '!(clear && cd ' . root . ' && pipenv run pytest -ra ' . a:filename . ')'
+  let command = '!(clear && cd ' . root . ' && pipenv run pytest ' . g:pytest_args . ' ' . a:filename . ')'
   execute command
 endfunction
 
