@@ -127,9 +127,7 @@ function OpenBaseClass()
     let import_pattern = '\v *from *\zs[^ ]+\ze *import *' . cls
     if search(import_pattern, 'bW')
       let import_line = matchstr(getline('.'), import_pattern)
-      let import_line = substitute(import_line, '\v\.', '/', '')
-      let root = RootDir()
-      execute ':edit ' . root . '/' . import_line . '.py'
+      execute ':edit ' . _MakePythonFile(RootDir(), import_line)
     else
       echom 'Could not find an import statement for ' . cls
     endif
