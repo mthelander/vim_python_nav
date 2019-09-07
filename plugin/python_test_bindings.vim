@@ -162,15 +162,15 @@ function OpenModule()
   endif
 endfunction
 
-nnoremap ,gt :call OpenTest()<CR>
-nnoremap ;gt :call OpenTestHoriz()<CR>
+autocmd FileType python nnoremap <buffer> ,gt :call OpenTest()<CR>
+autocmd FileType python nnoremap <buffer> ;gt :call OpenTestHoriz()<CR>
 
-nnoremap ,gi :call OpenImplementation()<CR>
-nnoremap ;gi :call OpenImplementationHoriz()<CR>
+autocmd FileType python nnoremap <buffer> ,gi :call OpenImplementation()<CR>
+autocmd FileType python nnoremap <buffer> ;gi :call OpenImplementationHoriz()<CR>
 
-nnoremap ,T :call RunTests()<CR>
-nnoremap ,t :call RunTest()<CR>
-nnoremap ,gb :call OpenBaseClass()<CR>
-nnoremap ,gm :call OpenModule()<CR>
+autocmd FileType python nnoremap <buffer> ,T :call RunTests()<CR>
+autocmd FileType python nnoremap <buffer> ,t :call RunTest()<CR>
+autocmd FileType python nnoremap <buffer> ,gb :call OpenBaseClass()<CR>
+autocmd FileType python nnoremap <buffer> ,gm :call OpenModule()<CR>
 
 let g:loaded_python_vim_test_bindings = 1
