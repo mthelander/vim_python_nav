@@ -64,8 +64,8 @@ function _RunTest(filename)
 endfunction
 
 function RunTests()
-  " TODO: go to test if not in one
   :write!
+  call OpenTest()
   :redraw!
 
   call _RunTest(CurrentFilename())
@@ -73,6 +73,7 @@ endfunction
 
 function RunTest()
   :write!
+  call OpenTest()
   :redraw!
 
   let cls = _GetCurrentClassName()
